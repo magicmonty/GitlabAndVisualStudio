@@ -19,6 +19,31 @@ Martin Gondermann - [@magicmonty](http://www.twitter.com/magicmonty)
 
 ***
 
+## Ersteinrichtung Git
+
+### Installation
+- Git sollte bereits mit der Installation von VS2017 auf dem Rechner sein
+- **Test:**
+  - Kommandozeile (cmd oder PowerShell) öffnen
+  - ```git --version``` eingeben
+
+---
+
+## Ersteinrichtung Git
+
+### Konfiguration
+
+Folgende Befehle auf der Kommandozeile eingeben:
+
+```shell
+C:\> git config --global user.name "Klaus Mustermann"
+C:\> git config --global user.name "kmustermann@company.com"
+C:\> git config --global core.editor 'C:/Program Files (x86)/Notepad++/notepad++.exe'
+C:\> git config --global http.sslverify false
+```
+
+<span style="font-size:14px">*Das <code>http.sslverify false</code> deshalb, weil das SSL-Zertifikat self-signed ist</span>
+
 ***
 - data-background : images/demo-time.gif
 
