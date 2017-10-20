@@ -1,5 +1,5 @@
-- title : Git/GitLab und Visual Studio 
-- description : Einführung in Git mit VS 2017 
+- title : Git/GitLab und Visual Studio
+- description : EinfÃ¼hrung in Git mit VS 2017
 - author : Martin Gondermann
 - theme : beige
 - transition : slide
@@ -11,7 +11,7 @@
 <br />
 <br />
 
-### Einführung in Git mit VS 2017
+### EinfÃ¼hrung in Git mit VS 2017
 
 <br />
 <br />
