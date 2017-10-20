@@ -54,6 +54,7 @@ let copyStylesheet() =
 let copyPics() =
     try
       CopyDir (outDir </> "images") (slidesDir </> "images") (fun f -> true)
+      CopyDir (outDir </> "videos") (slidesDir </> "videos") (fun f -> true)
     with
     | exn -> traceImportant <| sprintf "Could not copy picture: %s" exn.Message
 
@@ -107,18 +108,26 @@ let startWebServer () =
 
     let port = findPort 8083
 
+
+    let mimetypes =
+        Writers.defaultMimeTypesMap
+            @@ (function | ".mp4" -> Writers.mkMimeType "video/mp4" false | _ -> None)
+
     let serverConfig = 
         { defaultConfig with
            homeFolder = Some (FullName outDir)
            bindings = [ HttpBinding.mkSimple HTTP "127.0.0.1" port ]
+           mimeTypesMap = mimetypes
         }
+            
     let app =
       choose [
         Filters.path "/websocket" >=> handShake socketHandler
         Writers.setHeader "Cache-Control" "no-cache, no-store, must-revalidate"
         >=> Writers.setHeader "Pragma" "no-cache"
         >=> Writers.setHeader "Expires" "0"
-        >=> browseHome ]
+        >=> browseHome
+      ]
     startWebServerAsync serverConfig app |> snd |> Async.Start
     Process.Start (sprintf "http://localhost:%d/index.html" port) |> ignore
 

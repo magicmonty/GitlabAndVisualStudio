@@ -44,6 +44,54 @@ C:\> git config --global http.sslverify false
 
 <span style="font-size:14px">*Das <code>http.sslverify false</code> deshalb, weil das SSL-Zertifikat self-signed ist</span>
 
+--- 
+
+## Ersteinrichtung Git
+
+### Konfiguration Beyond Compare
+
+```shell
+C:\> git config --global diff.tool bc
+C:\> git config --global difftool.bc.path 'C:/Program Files (x86)/Beyond Compare 4/bcomp.exe'
+C:\> git config --global merge.tool bc
+C:\> git config --global mergetool.bc.path 'C:/Program Files (x86)/Beyond Compare 4/bcomp.exe'
+```
+
+--- 
+
+## Ersteinrichtung Git
+
+### Konfiguration VS 2017
+
+![](images/settings1.png) ![](images/settings2.png)<br />
+
+--- 
+
+## Ersteinrichtung Git
+
+### Konfiguration VS 2017
+
+![](images/settings3.png)
+
+***
+
+## Neues Projekt einrichten
+
+- Projekt in VS erstellen<br />
+  ![](images/new_project1.png)
+
+---
+
+- data-background-video : videos/new-project.mp4
+
+***
+
+## Vorhandenes Projekt abrufen
+
+---
+
+- data-background-video : videos/clone-project.mp4
+
 ***
 - data-background : images/demo-time.gif
 
